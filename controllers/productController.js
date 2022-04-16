@@ -1,7 +1,17 @@
 const model =  require("../models/productsModel")
 
-const getProduct = (req,res)=>{
+const renderProduct = (req,res)=>{
     res.render("form.pug")
+}
+
+const getAllProducts = async (req,res) =>{
+    try {
+      const products = await model.getAllProducts();
+      console.log(products);
+      res.render("products.pug",{"products":products});  
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const createProduct = async (req,res)=>{
@@ -28,8 +38,9 @@ const createProduct = async (req,res)=>{
 
 
 const formController = {
-    getProduct,
-    createProduct
+    renderProduct,
+    createProduct,
+    getAllProducts
 }
 
 module.exports = formController;
