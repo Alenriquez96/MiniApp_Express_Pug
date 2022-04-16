@@ -1,0 +1,12 @@
+include ./head.pug
+
+form(action="/", method="post") 
+    label(for="name") Nombre 
+    input(type="text", name="name")
+    label(for="price") Precio 
+    input(type="text", name="price")
+    label(for="description") Descripción 
+    input(type="text", name="description")
+    label(for="img") Imagen 
+    input(type="text", name="img")
+    button(type="submit") Enviar datos
