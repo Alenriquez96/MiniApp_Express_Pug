@@ -10,7 +10,6 @@ const renderProduct = (req,res)=>{
 const getAllProducts = async (req,res) =>{
     try {
       const products = await model.getAllProducts();
-      console.log(products);
       res.render("products.pug",{"products":products});  
     } catch (error) {
         console.log(error);
