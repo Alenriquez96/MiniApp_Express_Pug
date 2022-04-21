@@ -1,6 +1,6 @@
 include ./head.pug
 
-form(action="/", method="post") 
+form(action="/", method="post", enctype="multipart/form-data") 
     label(for="name") Nombre 
     input(type="text", name="name")
     label(for="price") Precio 
@@ -8,7 +8,9 @@ form(action="/", method="post")
     label(for="description") Descripción 
     input(type="text", name="description")
     label(for="img") Imagen 
-    input(type="text", name="img")
+    input(type="file", name="img" id="file")
     button(type="submit") Enviar datos
 
 a(href="/products") Ver productos
+
+
