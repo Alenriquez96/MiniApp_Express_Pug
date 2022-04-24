@@ -1,16 +1,22 @@
 include ./head.pug
+    section(class="center")
+        h1 Sube un producto
+        form(action="/", method="post", enctype="multipart/form-data")
+            div(class="inputbox")
+                input(type="text", name="name")
+                label(for="name") Nombre 
+            div(class="inputbox")
+                input(type="text", name="price")
+                label(for="price") Precio 
+            div(class="inputbox")
+                input(type="text", name="description")
+                label(for="description") Descripción 
+            div(class="inputbox")
+                input(type="file", name="img" id="file")
+                label(for="img") Imagen 
+            div(class="inputbox")
+                button(type="submit") Subir producto
 
-form(action="/", method="post", enctype="multipart/form-data") 
-    label(for="name") Nombre 
-    input(type="text", name="name")
-    label(for="price") Precio 
-    input(type="text", name="price")
-    label(for="description") Descripción 
-    input(type="text", name="description")
-    label(for="img") Imagen 
-    input(type="file", name="img" id="file")
-    button(type="submit") Enviar datos
-
-a(href="/products") Ver productos
+    a(href="/products") Ver productos   
 
 
