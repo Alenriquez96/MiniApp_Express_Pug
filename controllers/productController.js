@@ -17,7 +17,6 @@ const getAllProducts = async (req,res) =>{
 }
 
 const createProduct = async (req,res)=>{
-    console.log(req.body);
     const name = req.body.name;
     const price = req.body.price;
     const description = req.body.description;
@@ -28,6 +27,7 @@ const createProduct = async (req,res)=>{
         contentType: 'image/jpeg'
     }; 
     const storageRef = ref(storage, 'images/' + fileName);
+    console.log(storageRef);
 
     try {
         await uploadBytes(storageRef, file.buffer, metadata).then(async (snapshot) => {
